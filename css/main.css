@@ -5,3 +5,50 @@ video {
   width: 100%;
   height: auto;
 }
+
+.slide {
+
+
+  /* completely transparent when not active */
+  opacity: 0;
+
+  /* transition */
+  transition: all 600ms;
+  background: black;
+  color: white;
+
+/* Dimensions */
+width: 100vw;
+height: 100vh;
+/* to comment: command + slash */
+
+/* Center Contents */
+display: flex;
+justify-content: center;
+align-items: center;
+
+/* Positioning */
+position: fixed; 
+inset: 0;
+}
+
+.slide.active{
+  /* HINT: manage the Z index here. when all of these things are transparent, you can technically highlight the two so that it is on top. */
+  z-index: 1;
+  opacity: 1;
+}
+
+.back,
+.next {
+  position: fixed;
+  right: 0;
+  z-index: 2;
+}
+
+.back{
+  top: 45%;
+}
+
+.next {
+  top: 52%;
+}
