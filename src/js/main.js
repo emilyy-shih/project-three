@@ -23,6 +23,9 @@
 // 1 0 0 -> goBack -> 0 0 1
 // 0 0 1 -> goNext -> 1 0 0 
 // think about if and else scenario. 
+// Console: slides[0].nextElementSibling
+// get currently active slide: document.querySelector (".slide.active")
+// get last slide: document.querySelector (".slide: last-of-type")
 
 // Get
 let back = document.querySelector(".back");
