@@ -6,58 +6,54 @@ video {
   height: auto;
 }
 
-.slide {
-
-
-  /* completely transparent when not active */
-  opacity: 0;
-
-  /* transition */
-  transition: all 600ms;
-  background: black;
-  color: white;
-
-/* Dimensions */
-width: 100vw;
-height: 100vh;
-/* to comment: command + slash */
-
-/* Center Contents */
-display: flex;
-justify-content: center;
-align-items: center;
-
-/* Positioning */
-position: fixed; 
-inset: 0;
+html {
+ background: black;
 }
 
-.slide.active{
-  /* HINT: manage the Z index here. when all of these things are transparent, you can technically highlight the two so that it is on top. */
+#xyz{
+  /* insert background image here */
+  /* for a darker background color: background-image: linear-gradient(black, transparent) */
+  background-size: cover;
+  background-position: center;
+}
+
+.slide {
+  /* Completely Transparent When Not Active */
+  opacity: 0;
+  
+  /* Transition */
+  transition: all 300ms;
+  
+  background: black;
+  color: white;
+  
+  /* Center Contents */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Positioning */
+  position: fixed;
+  inset: 0; 
+}
+
+.slide.active {
+  /* Manage the z-index here */
   z-index: 1;
   opacity: 1;
 }
 
-.back:hover,
-.next:hover {
+.back,
+.next {
   position: fixed;
-  right: 0;
+  right: 1rem;
   z-index: 2;
 }
 
-.back{
-  top: 45%;
+.back {
+  top: 48%;
 }
 
 .next {
   top: 52%;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: 0.4}
-  to {opacity: 1}
-}
-
-@media only screen and (max-width: 300px) {
-  .prev, .next,.text {font-size: 11px}
 }

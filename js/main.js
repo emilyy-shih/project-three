@@ -28,7 +28,7 @@
 // get last slide: document.querySelector (".slide: last-of-type")
 
 // Get
-let back = document.querySelector(".back");
+/*let back = document.querySelector(".back");
 let next = document.querySelector(".next");
 let slide1 = document.querySelectorAll (".slide");
 
@@ -46,5 +46,48 @@ function goNext() {
 // Wire it up
 back.addEventListener("click", goBack);
 next.addEventListener("click", goNext);
+*/
+
+/* Get */
+let slideIndex= 0;
+let back = document.querySelector(".back");
+let next = document.querySelector(".next");
+let slides = document.querySelectorAll(".slide");
+
+/* Define Behavior */
+function goBack() {
+  /* TODO - Make it actually go back */
+  console.log("BACK");
+  slides[slideIndex].classList.toggle("active");
+  if (slideIndex - 1 < 0) {
+      slideIndex = slides.length - 1;
+  } else{
+      slideIndex--;
+  }
+  slides[slideIndex].classList.toggle("active");
+}
+
+function goNext() {
+  /* TODO - Make it actually go next */
+  console.log("NEXT");
+  slides[slideIndex].classList.toggle("active");
+  if (slideIndex +1 > slides.length - 1) {
+      slideIndex =0;
+  } else{
+      slideIndex++;
+  }
+  slides[slideIndex].classList.toggle("active");
 
 
+}
+
+/* Wire It Up */
+back.addEventListener("click", goBack);
+next.addEventListener("click", goNext);
+
+
+// slides[0].nextElementSibling
+// slides[0].previousElementSibling
+// document.querySelector(".slide")
+// document.querySelector(".slide.active")
+// document.querySelector(".slide:last-child")
