@@ -10,11 +10,28 @@ html {
  background: black;
 }
 
-#xyz{
+#first.slide{
   /* insert background image here */
   /* for a darker background color: background-image: linear-gradient(black, transparent) */
   background-size: cover;
   background-position: center;
+  background-color:black;
+}
+
+#second.slide{
+  /* insert background image here */
+  /* for a darker background color: background-image: linear-gradient(black, transparent) */
+  background-size: cover;
+  background-position: center;
+  background-color:white;
+}
+
+#third.slide{
+  /* insert background image here */
+  /* for a darker background color: background-image: linear-gradient(black, transparent) */
+  background-size: cover;
+  background-position: center;
+  background-color:white;
 }
 
 .slide {
