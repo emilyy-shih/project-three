@@ -10,6 +10,11 @@ html {
  background: black;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+h1{
+  font-family: 'Raleway', sans-serif;}
+
 #first.slide{
   /* insert background image here */
   /* for a darker background color: background-image: linear-gradient(black, transparent) */
@@ -23,7 +28,7 @@ html {
   /* for a darker background color: background-image: linear-gradient(black, transparent) */
   background-size: cover;
   background-position: center;
-  background-color:white;
+  background: linear-gradient(#dfa4a4, #ffffff);
 }
 
 #third.slide{
@@ -31,8 +36,30 @@ html {
   /* for a darker background color: background-image: linear-gradient(black, transparent) */
   background-size: cover;
   background-position: center;
-  background-color:white;
+  background: linear-gradient(#f8e3c6, #8d6a3c);
 }
+
+#fourth.slide{
+  /* insert background image here */
+  /* for a darker background color: background-image: linear-gradient(black, transparent) */
+  background-size: cover;
+  background-position: center;
+  background: linear-gradient(#5f7073, #ffffff);
+}
+
+#fifth.slide{
+  /* insert background image here */
+  /* for a darker background color: background-image: linear-gradient(black, transparent) */
+  background-size: cover;
+  background-position: center;
+  background: linear-gradient(#9198e5, #ffffff);}
+
+#sixth.slide{
+    /* insert background image here */
+    /* for a darker background color: background-image: linear-gradient(black, transparent) */
+    background-size: cover;
+    background-position: center;
+    background: linear-gradient(#ebe5b4, #ca894c);}
 
 .slide {
   /* Completely Transparent When Not Active */
@@ -97,4 +124,65 @@ html {
     transform: scale(1);
     z-index: 1;
   /*   display: block; */
+  }
+
+  :root {
+    --height: 0px;
+    --duration: 5s;
+  }
+  
+  body {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .particle {
+    width: 50px;
+    position: absolute;
+    will-change: transform;
+    /*
+      Tells the browser that the transform value will change
+      and that the element should be on its on layer (GPU Acceleration)
+    */
+    animation-duration: var(--duration);
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+  }
+  
+  .left {
+    animation-name: fall-left;
+  }
+  
+  .right {
+    animation-name: fall-right;
+  }
+  
+  @keyframes fall-left {
+    
+    from {
+      transform: translateY(-50px) rotate(0deg);
+    }
+    
+    to {
+      transform: translateY(var(--height)) rotate(360deg);
+    }
+    
+  }
+  
+  @keyframes fall-right {
+    
+    from {
+      transform: translateY(-50px) rotate(0deg);
+    }
+    
+    to {
+      transform: translateY(var(--height)) rotate(-360deg);
+    }
+    
   }
