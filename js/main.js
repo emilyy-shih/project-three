@@ -159,7 +159,7 @@ var emit = function() {
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
   
   // Add image source to particle
-  particle.src = "src/img/coffee bean.png";
+  particle.src = "../img/coffee-bean.png";
   
   // Add particle class and random rotation
   particle.className = Math.random() >= 0.5 ? "particle left" : "particle right";
