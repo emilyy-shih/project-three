@@ -91,3 +91,24 @@ next.addEventListener("click", goNext);
 // document.querySelector(".slide")
 // document.querySelector(".slide.active")
 // document.querySelector(".slide:last-child")
+
+let triggers = document.querySelectorAll(".open-modal");
+let modals = document.querySelectorAll(".modal");
+
+// Define Behavior
+function toggleModal() {
+  document.getElementById(this.id.replace("open-", "")).classList.toggle("active");
+}
+
+function dismissModal() {
+  this.className = "modal";
+}
+
+// Wire It Up
+triggers.forEach((trigger) => {
+  trigger.addEventListener("click", toggleModal);
+});
+
+modals.forEach((modal) => {
+  modal.addEventListener("click", dismissModal);
+});
