@@ -7,37 +7,41 @@ video {
 }
 
 html {
- background: black;
+  background: black;
 }
 /* how to import unicodes, how to line the intro correctly and how to do the particle animation */
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Raleway&display=swap");
 
-h1{
-  font-family: 'Raleway', sans-serif;}
-
-  h2{
-    font-family: 'Raleway', sans-serif;
-    font-size: 3rem;
-    position: relative;
-    text-align: center;
-    margin-top: 3rem;
-  }
-
-p{
-font-family: 'Nunito', sans-serif;
-  font-family: 'Raleway', sans-serif;
+h1 {
+  font-family: "Raleway", sans-serif;
+  position: relative;
+  text-align: center;
 }
-#first.slide{
+
+h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
+  position: relative;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+p {
+  font-family: "Nunito", sans-serif;
+  font-family: "Raleway", sans-serif;
+  padding: 5rem;
+  font-size: 1.3rem;
+}
+#first.slide {
   /* insert background image here */
   /* for a darker background color: background-image: linear-gradient(black, transparent) */
   background-size: cover;
   background-position: center;
-  background-color:black;
+  background-color: black;
 }
 
-
-#second.slide{
+#second.slide {
   /* insert background image here */
   /* for a darker background color: background-image: linear-gradient(black, transparent) */
   background-size: cover;
@@ -45,7 +49,7 @@ font-family: 'Nunito', sans-serif;
   background: linear-gradient(#dfa4a4, #ffffff);
 }
 
-#third.slide{
+#third.slide {
   /* insert background image here */
   /* for a darker background color: background-image: linear-gradient(black, transparent) */
   background-size: cover;
@@ -53,7 +57,7 @@ font-family: 'Nunito', sans-serif;
   background: linear-gradient(#f8e3c6, #8d6a3c);
 }
 
-#fourth.slide{
+#fourth.slide {
   /* insert background image here */
   /* for a darker background color: background-image: linear-gradient(black, transparent) */
   background-size: cover;
@@ -61,38 +65,40 @@ font-family: 'Nunito', sans-serif;
   background: linear-gradient(#5f7073, #ffffff);
 }
 
-#fifth.slide{
+#fifth.slide {
   /* insert background image here */
   /* for a darker background color: background-image: linear-gradient(black, transparent) */
   background-size: cover;
   background-position: center;
-  background: linear-gradient(#9198e5, #ffffff);}
+  background: linear-gradient(#9198e5, #ffffff);
+}
 
-#sixth.slide{
-    /* insert background image here */
-    /* for a darker background color: background-image: linear-gradient(black, transparent) */
-    background-size: cover;
-    background-position: center;
-    background: linear-gradient(#ebe5b4, #ca894c);}
+#sixth.slide {
+  /* insert background image here */
+  /* for a darker background color: background-image: linear-gradient(black, transparent) */
+  background-size: cover;
+  background-position: center;
+  background: linear-gradient(#ebe5b4, #ca894c);
+}
 
 .slide {
   /* Completely Transparent When Not Active */
   opacity: 0;
-  
+
   /* Transition */
   transition: all 2s;
-  
+
   background: black;
   color: white;
-  
+
   /* Center Contents */
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   /* Positioning */
   position: fixed;
-  inset: 0; 
+  inset: 0;
 }
 
 .slide.active {
@@ -118,95 +124,140 @@ font-family: 'Nunito', sans-serif;
 
 .modal {
   /*   display: none; */
-    z-index: -1;
-    opacity: 0;
-    transform: scale(3.0);
-    transition: all 600ms;
-    background: rgba(0, 0, 0, 0.9);
-    backdrop-filter: blur(5px);
-    color: white;
-    position: fixed;
-    inset: 0; /* Is shorthand for... */
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-  
-  .modal.active {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 1;
-  /*   display: block; */
-  }
+  z-index: -1;
+  opacity: 0;
+  transform: scale(3);
+  transition: all 600ms;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
+  color: white;
+  position: fixed;
+  inset: 0; /* Is shorthand for... */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
 
-  :root {
-    --height: 0px;
-    --duration: 5s;
-  }
-  
-  body {
-    margin: 0;
-    overflow: hidden;
-  }
-  
-  .container {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    z-index: 1000;
-    position: absolute;
-    pointer-events: none;
-  }
-  
-  .particle {
-    width: 50px;
-    position: absolute;
-    will-change: transform;
-    /*
+.modal.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+  /*   display: block; */
+}
+
+:root {
+  --height: 0px;
+  --duration: 5s;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1000;
+  position: absolute;
+  pointer-events: none;
+}
+
+.particle {
+  width: 50px;
+  position: absolute;
+  will-change: transform;
+  /*
       Tells the browser that the transform value will change
       and that the element should be on its on layer (GPU Acceleration)
     */
-    animation-duration: var(--duration);
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
-  }
-  
-  .left {
-    animation-name: fall-left;
-  }
-  
-  .right {
-    animation-name: fall-right;
-  }
-  
-  @keyframes fall-left {
-    
-    from {
-      transform: translateY(-50px) rotate(0deg);
-    }
-    
-    to {
-      transform: translateY(var(--height)) rotate(360deg);
-    }
-    
-  }
-  
-  @keyframes fall-right {
-    
-    from {
-      transform: translateY(-50px) rotate(0deg);
-    }
-    
-    to {
-      transform: translateY(var(--height)) rotate(-360deg);
-    }
-    
+  animation-duration: var(--duration);
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+.left {
+  animation-name: fall-left;
+}
+
+.right {
+  animation-name: fall-right;
+}
+
+@keyframes fall-left {
+  from {
+    transform: translateY(-50px) rotate(0deg);
   }
 
-  button {
-    background: none;
-    border: none;
-    color: white;
-
+  to {
+    transform: translateY(var(--height)) rotate(360deg);
   }
+}
+
+@keyframes fall-right {
+  from {
+    transform: translateY(-50px) rotate(0deg);
+  }
+
+  to {
+    transform: translateY(var(--height)) rotate(-360deg);
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+}
+
+h1::before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+h1:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+h1::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  inset: 0 0 0 0;
+  background: linear-gradient(#6b4c37, #9c6d51);
+  z-index: -1;
+  transition: transform 1s ease;
+}
+
+h1 {
+  position: relative;
+  font-size: 3rem;
+}
+
+html {
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  min-inline-size: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+  font-family: system-ui, sans-serif;
+}
+
+@media (orientation: landscape) {
+  body {
+    grid-auto-flow: column;
+  }
+}
