@@ -33,6 +33,10 @@ p {
   padding: 5rem;
   font-size: 1.3rem;
 }
+
+.second-paragraph {
+  padding: 5rem;
+}
 #first.slide {
   /* insert background image here */
   /* for a darker background color: background-image: linear-gradient(black, transparent) */

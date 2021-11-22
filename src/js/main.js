@@ -1,4 +1,3 @@
-
 //Elements
 
 //buttons (forward/backward) it will be outside the container
@@ -8,21 +7,21 @@
 //Styles
 //transitions (fade/slideover)
 //fills entire screen (Each slide)
-//buttons need to be on top the slides, and only a single pair. 
+//buttons need to be on top the slides, and only a single pair.
 //active styling
 
 //logic
 //get the buttons (listen to them) container/slides (modifying them)
-//remove the active class from the currently displayed slide and add it to the next visible slide. 
+//remove the active class from the currently displayed slide and add it to the next visible slide.
 //wire up the buttons for going back/next
 
 //Think about scenarios before coding
 // Three slides: 0 1 0 (1 is active right now)
 // goNext -> 0 0 1
-// 0 1 0 -> goBack -> 1 0 0 
+// 0 1 0 -> goBack -> 1 0 0
 // 1 0 0 -> goBack -> 0 0 1
-// 0 0 1 -> goNext -> 1 0 0 
-// think about if and else scenario. 
+// 0 0 1 -> goNext -> 1 0 0
+// think about if and else scenario.
 // Console: slides[0].nextElementSibling
 // get currently active slide: document.querySelector (".slide.active")
 // get last slide: document.querySelector (".slide: last-of-type")
@@ -49,7 +48,7 @@ next.addEventListener("click", goNext);
 */
 
 /* Get */
-let slideIndex= 0;
+let slideIndex = 0;
 let back = document.querySelector(".back");
 let next = document.querySelector(".next");
 let slides = document.querySelectorAll(".slide");
@@ -60,9 +59,9 @@ function goBack() {
   console.log("BACK");
   slides[slideIndex].classList.toggle("active");
   if (slideIndex - 1 < 0) {
-      slideIndex = slides.length - 1;
-  } else{
-      slideIndex--;
+    slideIndex = slides.length - 1;
+  } else {
+    slideIndex--;
   }
   slides[slideIndex].classList.toggle("active");
 }
@@ -71,20 +70,17 @@ function goNext() {
   /* TODO - Make it actually go next */
   console.log("NEXT");
   slides[slideIndex].classList.toggle("active");
-  if (slideIndex +1 > slides.length - 1) {
-      slideIndex =0;
-  } else{
-      slideIndex++;
+  if (slideIndex + 1 > slides.length - 1) {
+    slideIndex = 0;
+  } else {
+    slideIndex++;
   }
   slides[slideIndex].classList.toggle("active");
-
-
 }
 
 /* Wire It Up */
 back.addEventListener("click", goBack);
 next.addEventListener("click", goNext);
-
 
 // slides[0].nextElementSibling
 // slides[0].previousElementSibling
@@ -97,7 +93,9 @@ let modals = document.querySelectorAll(".modal");
 
 // Define Behavior
 function toggleModal() {
-  document.getElementById(this.id.replace("open-", "")).classList.toggle("active");
+  document
+    .getElementById(this.id.replace("open-", ""))
+    .classList.toggle("active");
 }
 
 function dismissModal() {
@@ -116,7 +114,7 @@ modals.forEach((modal) => {
 // How long does it take to fall?
 var duration = 10000;
 
-// How often are particles are generated?
+// How often are particles generated?
 var rate = 1000;
 
 // Get root document
@@ -130,8 +128,7 @@ var width;
 var height;
 
 // Get the dimensions and update CSS
-var dimensions = function() {
-  
+var dimensions = function () {
   // Get the width of the container
   width = container.offsetWidth;
 
@@ -140,7 +137,7 @@ var dimensions = function() {
 
   // Set height in CSS
   root.style.setProperty("--height", `${height}px`);
-}
+};
 
 // Invoke dimensions
 dimensions();
@@ -149,35 +146,35 @@ dimensions();
 window.onresize = dimensions;
 
 // Function that emit partlce
-var emit = function() {
-  
+var emit = function () {
   // Create particle element
   var particle = document.createElement("img");
-  
+
   // TODO: Make source dynamic or psuedo random
   // image_1, image_2, then just pick a random number between 1 and 5
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-  
+
   // Add image source to particle
   particle.src = "../img/coffee-bean.png";
-  
+
   // Add particle class and random rotation
-  particle.className = Math.random() >= 0.5 ? "particle left" : "particle right";
-  
+  particle.className =
+    Math.random() >= 0.5 ? "particle left" : "particle right";
+
   // Add random left value so particle emit across the width of the container
   var left = Math.floor(Math.random() * (width - 50));
-  
+
   // Add the random left value to the particle
   particle.style.left = `${left}px`;
-  
+
   // Append the particle to the container
   container.appendChild(particle);
-  
+
   // Clean up particle
   setTimeout(() => {
     particle.remove();
   }, duration);
-}
+};
 
 // Emit particles with setInterval
 var interval = setInterval(emit, rate);
