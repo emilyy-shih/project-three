@@ -16,6 +16,14 @@ html {
 h1{
   font-family: 'Raleway', sans-serif;}
 
+  h2{
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    position: relative;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
 p{
 font-family: 'Nunito', sans-serif;
   font-family: 'Raleway', sans-serif;
@@ -27,6 +35,7 @@ font-family: 'Nunito', sans-serif;
   background-position: center;
   background-color:black;
 }
+
 
 #second.slide{
   /* insert background image here */
@@ -71,7 +80,7 @@ font-family: 'Nunito', sans-serif;
   opacity: 0;
   
   /* Transition */
-  transition: all 3s;
+  transition: all 2s;
   
   background: black;
   color: white;
@@ -199,4 +208,5 @@ font-family: 'Nunito', sans-serif;
     background: none;
     border: none;
     color: white;
+
   }
