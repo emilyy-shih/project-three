@@ -129,9 +129,3 @@ var emit = function () {
 
 // Emit particles with setInterval
 var interval = setInterval(emit, rate);
-
-// TODO: Stop animation when screen is not visible
-// https://developer.mozilla.org/en-US/docs/Web/API/Page_Visibility_API
-// https://www.w3schools.com/jsref/met_win_clearinterval.asp
-
-// TODO: Increase emit rate and reset interval based on slide number
