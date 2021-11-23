@@ -4,6 +4,7 @@ img,
 video {
   width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 html {
@@ -263,5 +264,13 @@ body {
 @media (orientation: landscape) {
   body {
     grid-auto-flow: column;
+    overflow-y: scroll;
+  }
+}
+
+@media (orientation: portrait) {
+  .modal {
+    grid-auto-flow: column;
+    overflow-y: scroll;
   }
 }
