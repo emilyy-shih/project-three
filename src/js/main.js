@@ -106,7 +106,7 @@ var emit = function () {
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
   // Add image source to particle
-  particle.src = "../img/coffee-bean.PNG";
+  particle.src = "./img/coffee-bean.png";
 
   // Add particle class and random rotation
   particle.className =
