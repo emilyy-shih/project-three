@@ -273,9 +273,6 @@ body {
     grid-auto-flow: column;
     overflow-y: scroll;
   }
-}
-
-@media {
   p {
     padding: 4rem;
   }
